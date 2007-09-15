@@ -26,7 +26,7 @@ compressed kernels, network booting (using bootp), partition tables in
 DEC UNIX format, and interactive booting and default configurations for
 SRM consoles that cannot pass long option strings.
 
-If you are installing Mandrake Linux on an Alpha, you'll need to install
+If you are installing Mandriva Linux on an Alpha, you'll need to install
 the aboot package.
 
 %prep
