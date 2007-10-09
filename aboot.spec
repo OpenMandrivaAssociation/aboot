@@ -1,4 +1,4 @@
-Summary: A bootloader which can be started from the SRM console.
+Summary: A bootloader which can be started from the SRM console
 Name: aboot
 %define aboot_version 0.9b
 Version: %{aboot_version}
