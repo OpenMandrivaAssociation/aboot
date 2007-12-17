@@ -8,7 +8,6 @@ License: GPL
 Group: System/Kernel and hardware
 URL: http://www.sf.net/projects/aboot
 Source: aboot-%version.tar.bz2
-BuildRoot: %{_tmppath}/%{name}-root
 Patch0: aboot-0.7-cnf-config-file.patch
 Patch1: aboot-0.7a-optflags.patch
 Requires: common-licenses
