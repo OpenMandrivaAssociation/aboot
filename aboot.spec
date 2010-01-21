@@ -2,9 +2,9 @@ Summary: A bootloader which can be started from the SRM console
 Name: aboot
 %define aboot_version 0.9b
 Version: %{aboot_version}
-Release: %mkrel 3
+Release: %mkrel 4
 ExclusiveArch: alpha
-License: GPL
+License: GPLv2+
 Group: System/Kernel and hardware
 URL: http://www.sf.net/projects/aboot
 Source: aboot-%version.tar.bz2
