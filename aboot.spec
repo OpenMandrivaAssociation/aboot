@@ -38,18 +38,18 @@ the aboot package.
 make MDK_OPT_FLAGS="$RPM_OPT_FLAGS" kversion=`uname -r`
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT
-chmod go= $RPM_BUILD_ROOT
+rm -rf %{buildroot}
+mkdir -p %{buildroot}
+chmod go= %{buildroot}
 
-mkdir -p $RPM_BUILD_ROOT%{_mandir}/man8
-%makeinstall root=$RPM_BUILD_ROOT bindir=$RPM_BUILD_ROOT/sbin
-cp -p sdisklabel/swriteboot.8 tools/e2writeboot.8 $RPM_BUILD_ROOT%{_mandir}/man8
+mkdir -p %{buildroot}%{_mandir}/man8
+%makeinstall root=%{buildroot} bindir=%{buildroot}/sbin
+cp -p sdisklabel/swriteboot.8 tools/e2writeboot.8 %{buildroot}%{_mandir}/man8
 
 mv -f sdisklabel/README sdisklabel/README-sdisklabel || true
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-, root, root)
