@@ -1,0 +1,31 @@
+--- aboot-0.7/include/config.h.chmou	Wed Mar 22 22:36:39 2000
++++ aboot-0.7/include/config.h	Mon May 15 11:47:08 2000
+@@ -7,5 +7,6 @@
+ 
+ #define CONFIG_FILE_PARTITION	1
+ #define CONFIG_FILE		"/etc/aboot.conf"
++#define CONFIG_FILE2           "/etc/aboot.cnf"
+ 
+ #endif /* config_h */
+--- aboot-0.7/disk.c.chmou	Mon May 15 11:43:47 2000
++++ aboot-0.7/disk.c	Mon May 15 11:46:44 2000
+@@ -382,7 +382,8 @@
+ 	char *buf;
+ 
+ 	fd = open_config_file(fs);
+-	if (fd < 0) {
++        if (fd < 0) fd = (*fs->open)(CONFIG_FILE2);
++        if (fd < 0) {
+ 		printf("%s: file not found\n", CONFIG_FILE);
+ 		return;
+ 	}
+@@ -408,7 +409,8 @@
+ 
+ 	*str = '\0';
+ 	fd = open_config_file(fs);
+-	if (fd < 0) {
++        if (fd < 0) fd = (*fs->open)(CONFIG_FILE2);
++        if (fd < 0) {
+ 		printf("%s: file not found\n", CONFIG_FILE);
+ 		return -1;
+ 	}

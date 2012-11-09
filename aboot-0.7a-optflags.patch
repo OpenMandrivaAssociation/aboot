@@ -1,0 +1,11 @@
+--- aboot-0.7a/tools/Makefile.orig	Thu May 24 08:18:26 2001
++++ aboot-0.7a/tools/Makefile	Thu May 24 08:19:05 2001
+@@ -1,6 +1,6 @@
+ CC	= gcc
+-CFLAGS	= -g -O2 -Wall -I. -I../include $(CPPFLAGS)
+-LDFLAGS	= -g
++CFLAGS	= $(MDK_OPT_FLAGS) -Wall -I. -I../include $(CPPFLAGS)
++LDFLAGS	=
+ PGMS	= e2writeboot isomarkboot abootconf elfencap objstrip
+ 
+ EXEC_PREFIX = /usr
